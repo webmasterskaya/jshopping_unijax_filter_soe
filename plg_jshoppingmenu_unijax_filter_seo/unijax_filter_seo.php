@@ -4,7 +4,7 @@ use Joomla\CMS\Plugin\CMSPlugin;
 
 defined('_JEXEC') or die;
 
-class PlgJshoppingproductsUnijax_Filter_SOE extends CMSPlugin
+class PlgJshoppingmenuUnijax_Filter_SEO extends CMSPlugin
 {
 	/**
 	 * Application object.

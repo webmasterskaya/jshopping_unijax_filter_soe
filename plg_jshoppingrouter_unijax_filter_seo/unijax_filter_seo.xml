@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.9" type="plugin" group="jshoppingproducts" method="upgrade">
+<extension version="3.9" type="plugin" group="jshoppingrouter" method="upgrade">
 	<name>JShopping - SEO универсального AJAX фильтра</name>
 	<author>Artem Vasilev - Webmasterskaya</author>
 	<creationDate>01.03.2021</creationDate>
@@ -11,6 +11,6 @@
 	<description>SEO для AJAX фильтра товаров JoomShopping от NEVIGEN</description>
 
 	<files>
-		<filename plugin="unijax_filter_soe">unijax_filter_soe.php</filename>
+		<filename plugin="unijax_filter_seo">unijax_filter_seo.php</filename>
 	</files>
 </extension>
