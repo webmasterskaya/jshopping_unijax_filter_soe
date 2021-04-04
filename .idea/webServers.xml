@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7defd102-568c-4114-badf-d26103998997" name="DEMO SvarGo" url="https://demo.webmasterskaya.xyz/svar-go">
+        <fileTransfer rootFolder="/www/demo.webmasterskaya.xyz/svar-go" host="89.223.120.218" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,3 +1,5 @@
 .idea
 plugin
-*.izp
+!.idea/deployment.xml
+!.idea/webServers.xml
+/pkg_jshopping_unijax_filter_seo.zip

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="DEMO SvarGo" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="DEMO SvarGo">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/administrator/components/com_jshopping" local="$PROJECT_DIR$/com_jshopping_unijax_filter_seo" web="/" />
+            <mapping deploy="/plugins/jshoppingmenu/unijax_filter_seo" local="$PROJECT_DIR$/plg_jshoppingmenu_unijax_filter_seo" web="/" />
+            <mapping deploy="/plugins/jshoppingproducts/unijax_filter_seo" local="$PROJECT_DIR$/plg_jshoppingproducts_unijax_filter_seo" web="/" />
+            <mapping deploy="/plugins/jshoppingrouter/unijax_filter_seo" local="$PROJECT_DIR$/plg_jshoppingrouter_unijax_filter_seo" web="/" />
+            <mapping deploy="/plugins/system/unijax_filter_seo" local="$PROJECT_DIR$/plg_system_unijax_filter_seo" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/com_jshopping_unijax_filter_seo/com_jshopping_unijax_filter_seo.xml" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
