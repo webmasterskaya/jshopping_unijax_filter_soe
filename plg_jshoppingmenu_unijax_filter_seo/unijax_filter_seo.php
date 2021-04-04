@@ -42,4 +42,12 @@ class PlgJshoppingmenuUnijax_Filter_SEO extends CMSPlugin
 	{
 		parent::__construct($subject, $config);
 	}
+
+	function onBeforeAdminOptionPanelIcoDisplay(&$menu){
+		$menu['unijax_filter_seo'] = array('SEO для фильтра', 'index.php?option=com_jshopping&controller=unijax_filter_seo', 'jshop_configuration_b.png', 1);
+	}
+
+	function onBeforeAdminOptionPanelMenuDisplay(&$menu){
+		$menu['unijax_filter_seo'] = array('SEO для фильтра', 'index.php?option=com_jshopping&controller=unijax_filter_seo', 'jshop_country_list_b.png', 1);
+	}
 }
