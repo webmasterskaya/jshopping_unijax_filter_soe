@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `#__jshopping_unijax_filter_soe`
+CREATE TABLE IF NOT EXISTS `#__jshopping_unijax_filter_seo`
 (
     `filter_hash`       varchar(255) NOT NULL UNIQUE,
     `title_en-GB`       varchar(255),
