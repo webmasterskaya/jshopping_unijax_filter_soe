@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="system" method="upgrade">
+	<name>JShopping - SEO универсального AJAX фильтра</name>
+	<author>Artem Vasilev - Webmasterskaya</author>
+	<creationDate>01.03.2021</creationDate>
+	<copyright>Copyright (C) 2021 Webmasterskaya. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorEmail>dev@webmasterskaya.xyz</authorEmail>
+	<authorUrl>https://webmasterskaya.xyz</authorUrl>
+	<version>__DEPLOYMENT_VERSION__</version>
+	<description>SEO для AJAX фильтра товаров JoomShopping от NEVIGEN</description>
+
+	<files>
+		<filename plugin="unijax_filter_soe">unijax_filter_soe.php</filename>
+	</files>
+</extension>

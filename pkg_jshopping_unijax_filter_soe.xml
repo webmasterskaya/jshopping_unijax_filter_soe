@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="package" method="upgrade">
+	<name>JShopping - SEO универсального AJAX фильтра</name>
+	<packagename>jshopping_unijax_filter_soe</packagename>
+	<author>Artem Vasilev - Webmasterskaya</author>
+	<creationDate>01.03.2021</creationDate>
+	<copyright>Copyright (C) 2021 Webmasterskaya. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorEmail>dev@webmasterskaya.xyz</authorEmail>
+	<authorUrl>https://webmasterskaya.xyz</authorUrl>
+	<version>__DEPLOYMENT_VERSION__</version>
+	<description>SEO для AJAX фильтра товаров JoomShopping от NEVIGEN</description>
+
+	<scriptfile>script.php</scriptfile>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+
+	<files>
+		<folder type="plugin" method="upgrade" group="jshoppingmenu" id="unijax_filter_soe">
+			plg_jshoppingmenu_unijax_filter_soe
+		</folder>
+		<folder type="plugin" method="upgrade" group="jshoppingproducts" id="unijax_filter_soe">
+			plg_jshoppingproducts_unijax_filter_soe
+		</folder>
+		<folder type="plugin" method="upgrade" group="jshoppingrouter" id="unijax_filter_soe">
+			plg_jshoppingrouter_unijax_filter_soe
+		</folder>
+		<folder type="plugin" method="upgrade" group="system" id="unijax_filter_soe">
+			plg_system_unijax_filter_soe
+		</folder>
+		<folder type="files" method="upgrade" id="com_jshopping_unijax_filter_soe">com_jshopping_unijax_filter_soe
+		</folder>
+	</files>
+</extension>
