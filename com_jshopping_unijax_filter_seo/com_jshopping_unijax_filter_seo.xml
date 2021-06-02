@@ -13,6 +13,7 @@
 	<fileset>
 		<files target="administrator/components/com_jshopping">
 			<folder>views/unijax_filter_seo</folder>
+			<filename>helpers/unijax_filter_seo.php</filename>
 			<filename>controllers/unijax_filter_seo.php</filename>
 			<filename>models/unijax_filter_seo.php</filename>
 		</files>
