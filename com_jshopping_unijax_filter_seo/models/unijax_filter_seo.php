@@ -1,11 +1,11 @@
 <?php
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\MVC\Model\BaseDatabaseModel;
+use Joomla\CMS\Table\Table;
 
 defined('_JEXEC') or die;
 
-class JshoppingModelUnijax_filter_seo extends BaseDatabaseModel
+class JshoppingModelUnijax_filter_seo extends JshoppingModelBaseadmin
 {
 	public function getAllFilters($limitstart = null, $limit = null)
 	{
@@ -13,10 +13,12 @@ class JshoppingModelUnijax_filter_seo extends BaseDatabaseModel
 		$lang  = JSFactory::getLang();
 		$query = $db->getQuery(true);
 
-		$query->select($db->quoteName(
-			['filter_hash', $lang->get("title"), $lang->get("description"), $lang->get("alias")],
-			['filter_hash', 'title', 'description', 'alias']
-		))
+		$query->select(
+			$db->quoteName(
+				['filter_hash', $lang->get("title"), $lang->get("description"), 'link_encode'],
+				['filter_hash', 'title', 'description', 'link_encode']
+			)
+		)
 			->from($db->quoteName('#__jshopping_unijax_filter_seo'));
 		$db->setQuery($query, $limitstart, $limit);
 
@@ -34,5 +36,25 @@ class JshoppingModelUnijax_filter_seo extends BaseDatabaseModel
 		$db->setQuery($query);
 
 		return $db->loadResult();
+	}
+
+	public function save(array $post, $image = null)
+	{
+		Table::addIncludePath(
+			JPATH_ADMINISTRATOR . '/components/com_jshopping/tables/'
+		);
+		$filter_seo = JSFactory::getTable('unijax_filter_seo', 'jshop');
+		$filter_seo->bind($post);
+
+		if (!$filter_seo->store())
+		{
+			Factory::getApplication()->enqueueMessage(
+				_JSHOP_ERROR_SAVE_DATABASE, 'error'
+			);
+
+			return 0;
+		}
+
+		return $filter_seo;
 	}
 }

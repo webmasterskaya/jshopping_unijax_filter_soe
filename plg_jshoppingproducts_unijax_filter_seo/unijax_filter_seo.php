@@ -2,6 +2,7 @@
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\CMS\Table\Table;
 use Joomla\CMS\Uri\Uri;
 
 defined('_JEXEC') or die;
@@ -310,20 +311,65 @@ class PlgJshoppingproductsUnijax_Filter_SEO extends CMSPlugin
 
 		if (!empty($this->clearQuery))
 		{
-			// Добавляем в крошки
-			$pathway = $this->app->getPathway();
-			$pathway->addItem('Фильтр');
+
 
 			$meta = (object) [
 				'title'       => '',
-				'description' => '',
-				'h1'          => ''
+				'description' => ''
 			];
 
 			$doc = Factory::getDocument();
 
 			if ($this->joomShopping)
 			{
+				$filter_hash = unijax_filter_seo_helper::getFilterHash();
+				Table::addIncludePath(
+					JPATH_ADMINISTRATOR . '/components/com_jshopping/tables/'
+				);
+				$filter_seo = JSFactory::getTable('unijax_filter_seo', 'jshop');
+				$filter_seo->load($filter_hash);
+
+				$breadcrumbs_item_name = 'Фильтр';
+
+				if (!empty($filter_seo->filter_hash))
+				{
+					$lang              = JSFactory::getLang();
+					$meta->title       = $filter_seo->{$lang->get('title')};
+					$meta->description = $filter_seo->{$lang->get(
+						'description'
+					)};
+
+					$text = $filter_seo->{$lang->get('text')};
+
+					if(!empty($text)){
+						$view->category->description = $text;
+					}
+
+					$breadcrumbs = $filter_seo->{$lang->get('breadcrumbs')};
+
+					if(!empty($breadcrumbs)){
+						$breadcrumbs_item_name = $breadcrumbs;
+					}
+				}
+
+				// Добавляем в крошки
+				$pathway = $this->app->getPathway();
+				$pathway->addItem($breadcrumbs_item_name);
+
+				$title_set = false;
+				if (!empty($meta->title))
+				{
+					$doc->setTitle($meta->title);
+					$title_set = true;
+				}
+
+				$description_set = false;
+				if (!empty($meta->description))
+				{
+					$doc->setDescription($meta->description);
+					$description_set = true;
+				}
+
 				$conditions      = [];
 				$full_conditions = [];
 
@@ -574,11 +620,15 @@ class PlgJshoppingproductsUnijax_Filter_SEO extends CMSPlugin
 						. $full_conditions_string;
 				}
 
-				$doc->setTitle($meta->title);
-				$doc->setDescription($meta->description);
+				if (!$title_set)
+				{
+					$doc->setTitle($meta->title);
+				}
+				if (!$description_set)
+				{
+					$doc->setDescription($meta->description);
+				}
 			}
-
-			$no_sef_link = $this->filterHelper->getNonSefUrl();
 		}
 	}
 }

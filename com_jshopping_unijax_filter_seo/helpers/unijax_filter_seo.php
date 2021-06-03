@@ -27,9 +27,9 @@ class unijax_filter_seo_helper
 		return static::$instance;
 	}
 
-	public static function getPageHash()
+	public static function getFilterHash()
 	{
-		return base64_encode(self::getNonSefUrl());
+		return md5(self::getNonSefUrl());
 	}
 
 	public static function getNonSefUrl()
@@ -225,6 +225,16 @@ class unijax_filter_seo_helper
 				}
 			}
 		}
+	}
+
+	public static function getLinkEncode()
+	{
+		return base64_encode(self::getNonSefUrl());
+	}
+
+	public static function getPageHash()
+	{
+		return base64_encode(self::getNonSefUrl());
 	}
 
 	/**

@@ -11,18 +11,11 @@
 	<version>__DEPLOYMENT_VERSION__</version>
 	<description>SEO для AJAX фильтра товаров JoomShopping от NEVIGEN</description>
 
-	<install>
-		<sql>
-			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
-		</sql>
-	</install>
-
 	<scriptfile>script.php</scriptfile>
 
 	<files>
 		<folder type="plugin" method="upgrade" group="jshoppingmenu" id="unijax_filter_seo">plg_jshoppingmenu_unijax_filter_seo</folder>
 		<folder type="plugin" method="upgrade" group="jshoppingproducts" id="unijax_filter_seo">plg_jshoppingproducts_unijax_filter_seo</folder>
-		<folder type="plugin" method="upgrade" group="jshoppingrouter" id="unijax_filter_seo">plg_jshoppingrouter_unijax_filter_seo</folder>
 		<folder type="plugin" method="upgrade" group="system" id="unijax_filter_seo">plg_system_unijax_filter_seo</folder>
 		<folder type="files" method="upgrade" id="unijax_filter_seo">com_jshopping_unijax_filter_seo</folder>
 	</files>

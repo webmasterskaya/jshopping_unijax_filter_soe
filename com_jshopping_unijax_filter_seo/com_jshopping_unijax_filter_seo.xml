@@ -16,6 +16,7 @@
 			<filename>helpers/unijax_filter_seo.php</filename>
 			<filename>controllers/unijax_filter_seo.php</filename>
 			<filename>models/unijax_filter_seo.php</filename>
+			<filename>tables/unijax_filter_seo.php</filename>
 		</files>
 	</fileset>
 </extension>

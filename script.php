@@ -5,7 +5,7 @@ defined('_JEXEC') or die;
 class pkg_jshopping_unijax_filter_soeInstallerScript
 {
 
-	protected $minimumPhp = '7.3';
+	protected $minimumPhp = '7.0';
 
 	protected $minimumJoomla = '3.9.0';
 
@@ -26,30 +26,7 @@ class pkg_jshopping_unijax_filter_soeInstallerScript
 	 */
 	public function preflight($type, $parent)
 	{
-		/*$app = JFactory::getApplication();
 
-		// Check old Joomla!
-		if (!class_exists('Joomla\CMS\Version'))
-		{
-			$app->enqueueMessage(JText::sprintf('PKG_JSHOPPING_COURIEREXE_ERR_COMPATIBLE_JOOMLA',
-				$this->minimumJoomla), 'error');
-		}
-
-		$jversion = new JVersion();
-
-		// Check PHP
-		if (!(version_compare(PHP_VERSION, $this->minimumPhp) >= 0))
-		{
-			$app->enqueueMessage(JText::sprintf('PKG_JSHOPPING_COURIEREXE_ERR_COMPATIBLE_PHP',
-				$this->minimumPhp), 'error');
-		}
-
-		// Check Joomla version
-		if (!$jversion->isCompatible($this->minimumJoomla))
-		{
-			$app->enqueueMessage(JText::sprintf('PKG_JSHOPPING_COURIEREXE_ERR_COMPATIBLE_JOOMLA',
-				$this->minimumJoomla), 'error');
-		}*/
 	}
 
 	/**

@@ -1,0 +1,1 @@
+DROP TABLE `#__jshopping_unijax_filter_seo`;

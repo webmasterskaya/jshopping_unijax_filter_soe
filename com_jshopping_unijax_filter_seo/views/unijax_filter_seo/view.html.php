@@ -6,8 +6,12 @@ defined('_JEXEC') or die;
 
 class JshoppingViewUnijax_filter_seo extends HtmlView
 {
+	public $rows;
+	public $pageNav;
+
 	function displayList($tpl = null){
 		JToolBarHelper::title( 'SEO для фильтра', 'generic.png' );
+		JToolBarHelper::addNew();
 		JToolBarHelper::deleteList();
 		parent::display($tpl);
 	}
