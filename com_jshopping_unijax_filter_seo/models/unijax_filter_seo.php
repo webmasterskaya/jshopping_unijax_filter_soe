@@ -15,8 +15,8 @@ class JshoppingModelUnijax_filter_seo extends JshoppingModelBaseadmin
 
 		$query->select(
 			$db->quoteName(
-				['filter_hash', $lang->get("title"), $lang->get("description"), 'link_encode'],
-				['filter_hash', 'title', 'description', 'link_encode']
+				['filter_hash', $lang->get("title"), $lang->get("description"), 'link_encode', $lang->get('breadcrumbs')],
+				['filter_hash', 'title', 'description', 'link_encode', 'breadcrumbs']
 			)
 		)
 			->from($db->quoteName('#__jshopping_unijax_filter_seo'));

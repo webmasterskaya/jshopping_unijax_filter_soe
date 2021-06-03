@@ -2,12 +2,13 @@
 
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Router\Route;
 
 defined('_JEXEC') or die;
 
-$rows    = $this->rows;
+$rows = $this->rows;
 $pageNav = $this->pageNav;
-$i       = 0;
+$i = 0;
 
 $classMain = '';
 if ($this->sidebar)
@@ -42,7 +43,10 @@ if ($this->sidebar)
 					Description
 				</th>
 				<th class="left">
-					Алиас
+					Хлебные крошки
+				</th>
+				<th class="center">
+					Посмотреть на сайте
 				</th>
 			</tr>
 			</thead>
@@ -67,7 +71,17 @@ if ($this->sidebar)
 						<?php echo $row->description; ?>
 					</td>
 					<td class="left">
-						<?php echo $row->alias; ?>
+						<?php echo $row->breadcrumbs; ?>
+					</td>
+					<td class="center">
+						<?php $link = Route::link(
+							'site',
+							base64_decode($row->link_encode)
+						);
+						echo HTMLHelper::link(
+							$link, 'На сайт', ['target' => '_blank']
+						);
+						?>
 					</td>
 				</tr>
 			<?php endforeach; ?>
