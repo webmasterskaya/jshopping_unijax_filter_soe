@@ -142,42 +142,6 @@ class pkg_jshopping_unijax_filter_seoInstallerScript
 			return false;
 		}
 
-		// Check database version
-		$db            = Factory::getDbo();
-		$serverType    = $db->getServerType();
-		$serverVersion = $db->getVersion();
-		if ($serverType == 'mysql'
-			&& stripos($serverVersion, 'mariadb') !== false)
-		{
-			$serverVersion = preg_replace('/^5\.5\.5-/', '', $serverVersion);
-
-			if (!(version_compare($serverVersion, $this->minimumMariaDb) >= 0))
-			{
-				$app->enqueueMessage(
-					Text::sprintf(
-						$prefix . 'ERROR_COMPATIBLE_DATABASE',
-						$this->minimumMySQL, $this->minimumMariaDb
-					), 'error'
-				);
-
-				return false;
-			}
-		}
-		elseif ($serverType == 'mysql'
-			&& !(version_compare(
-					$serverVersion, $this->minimumMySQL
-				) >= 0))
-		{
-			$app->enqueueMessage(
-				Text::sprintf(
-					$prefix . 'ERROR_COMPATIBLE_DATABASE',
-					$this->minimumMySQL, $this->minimumMariaDb
-				), 'error'
-			);
-
-			return false;
-		}
-
 		$query = $db->getQuery(true);
 
 		$query->select('COUNT(*)')
