@@ -38,11 +38,25 @@ class JshoppingModelUnijax_filter_seo extends JshoppingModelBaseadmin
 		return $db->loadResult();
 	}
 
-	public function save(array $post, $image = null)
+	public function save(array $post)
 	{
 		Table::addIncludePath(
 			JPATH_ADMINISTRATOR . '/components/com_jshopping/tables/'
 		);
+
+
+
+		$_lang = JSFactory::getModel("languages");
+		$languages = $_lang->getAllLanguages(1);
+		$input = Factory::getApplication()->input;
+
+		foreach ($languages as $lang)
+		{
+			$post['text_' . $lang->language] = $input->get(
+				'text_' . $lang->language, '', 'RAW'
+			);
+		}
+
 		$filter_seo = JSFactory::getTable('unijax_filter_seo', 'jshop');
 		$filter_seo->bind($post);
 
