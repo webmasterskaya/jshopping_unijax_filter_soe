@@ -15,8 +15,8 @@ class JshoppingModelUnijax_filter_seo extends JshoppingModelBaseadmin
 
 		$query->select(
 			$db->quoteName(
-				['filter_hash', $lang->get("title"), $lang->get("description"), 'link_encode', $lang->get('breadcrumbs')],
-				['filter_hash', 'title', 'description', 'link_encode', 'breadcrumbs']
+				['filter_hash', $lang->get("title"), $lang->get('name'), $lang->get("description"), 'link_encode', $lang->get('breadcrumbs')],
+				['filter_hash', 'title', 'name', 'description', 'link_encode', 'breadcrumbs']
 			)
 		)
 			->from($db->quoteName('#__jshopping_unijax_filter_seo'));
@@ -44,8 +44,6 @@ class JshoppingModelUnijax_filter_seo extends JshoppingModelBaseadmin
 			JPATH_ADMINISTRATOR . '/components/com_jshopping/tables/'
 		);
 
-
-
 		$_lang = JSFactory::getModel("languages");
 		$languages = $_lang->getAllLanguages(1);
 		$input = Factory::getApplication()->input;
@@ -54,6 +52,9 @@ class JshoppingModelUnijax_filter_seo extends JshoppingModelBaseadmin
 		{
 			$post['text_' . $lang->language] = $input->get(
 				'text_' . $lang->language, '', 'RAW'
+			);
+			$post['short_description_' . $lang->language] = $input->get(
+				'short_description_' . $lang->language, '', 'RAW'
 			);
 		}
 

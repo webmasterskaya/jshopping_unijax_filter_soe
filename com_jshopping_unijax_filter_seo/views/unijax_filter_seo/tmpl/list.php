@@ -40,6 +40,9 @@ if ($this->sidebar)
 					Title
 				</th>
 				<th class="left">
+					H1
+				</th>
+				<th class="left">
 					Description
 				</th>
 				<th class="left">
@@ -66,6 +69,9 @@ if ($this->sidebar)
 					</td>
 					<td class="left">
 						<?php echo $row->title; ?>
+					</td>
+					<td class="left">
+						<?php echo $row->name; ?>
 					</td>
 					<td class="left">
 						<?php echo $row->description; ?>

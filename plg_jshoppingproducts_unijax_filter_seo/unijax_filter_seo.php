@@ -341,13 +341,33 @@ class PlgJshoppingproductsUnijax_Filter_SEO extends CMSPlugin
 
 					$text = $filter_seo->{$lang->get('text')};
 
-					if(!empty($text)){
+					if (!empty($text))
+					{
 						$view->category->description = $text;
+					}
+
+					$short_description = $filter_seo->{$lang->get(
+						'short_description'
+					)};
+
+					if (!empty($short_description))
+					{
+						$view->category->short_description = $short_description;
+					}
+
+					$h1 = $filter_seo->{$lang->get(
+						'name'
+					)};
+
+					if (!empty($h1))
+					{
+						$view->category->name = $h1;
 					}
 
 					$breadcrumbs = $filter_seo->{$lang->get('breadcrumbs')};
 
-					if(!empty($breadcrumbs)){
+					if (!empty($breadcrumbs))
+					{
 						$breadcrumbs_item_name = $breadcrumbs;
 					}
 				}
@@ -623,10 +643,12 @@ class PlgJshoppingproductsUnijax_Filter_SEO extends CMSPlugin
 				if (!$title_set)
 				{
 					$doc->setTitle($meta->title);
+					$view->category->meta_title = $meta->title;
 				}
 				if (!$description_set)
 				{
 					$doc->setDescription($meta->description);
+					$view->category->meta_description = $meta->description;
 				}
 			}
 		}
