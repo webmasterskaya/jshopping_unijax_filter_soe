@@ -13,7 +13,7 @@ class PlgJshoppingproductsUnijax_Filter_SEO extends CMSPlugin
 	 * Application object.
 	 *
 	 * @var    JApplicationCms
-	 * @since  __DEPLOYMENT_VERSION__
+	 * @since  1.0.0
 	 */
 	protected $app;
 
@@ -21,7 +21,7 @@ class PlgJshoppingproductsUnijax_Filter_SEO extends CMSPlugin
 	 * Database object.
 	 *
 	 * @var    JDatabaseDriver
-	 * @since  __DEPLOYMENT_VERSION__
+	 * @since  1.0.0
 	 */
 	protected $db;
 
@@ -29,7 +29,7 @@ class PlgJshoppingproductsUnijax_Filter_SEO extends CMSPlugin
 	 * Load plugin language file automatically so that it can be used inside component
 	 *
 	 * @var    boolean
-	 * @since  __DEPLOYMENT_VERSION__
+	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
 	protected $isFilter = false;
@@ -99,7 +99,7 @@ class PlgJshoppingproductsUnijax_Filter_SEO extends CMSPlugin
 	 * @param   object  &$subject  The object to observe.
 	 * @param   array    $config   An optional associative array of configuration settings.
 	 *
-	 * @since   __DEPLOYMENT_VERSION__
+	 * @since   1.0.0
 	 */
 	public function __construct(&$subject, $config)
 	{

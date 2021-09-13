@@ -14,7 +14,7 @@ class PlgSystemUnijax_Filter_SEO extends CMSPlugin
 	 * Application object.
 	 *
 	 * @var    CMSApplication
-	 * @since  __DEPLOYMENT_VERSION__
+	 * @since  1.0.0
 	 */
 	protected $app;
 
@@ -22,7 +22,7 @@ class PlgSystemUnijax_Filter_SEO extends CMSPlugin
 	 * Database object.
 	 *
 	 * @var    JDatabaseDriver
-	 * @since  __DEPLOYMENT_VERSION__
+	 * @since  1.0.0
 	 */
 	protected $db;
 
@@ -30,13 +30,13 @@ class PlgSystemUnijax_Filter_SEO extends CMSPlugin
 	 * Load plugin language file automatically so that it can be used inside component
 	 *
 	 * @var    boolean
-	 * @since  __DEPLOYMENT_VERSION__
+	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
 	/**
 	 * @var unijax_filter_seo_helper
 	 *
-	 * @since __DEPLOYMENT_VERSION__
+	 * @since 1.0.0
 	 */
 	protected $filterHelper;
 
@@ -47,7 +47,7 @@ class PlgSystemUnijax_Filter_SEO extends CMSPlugin
 	 * @param   object  &$subject  The object to observe.
 	 * @param   array    $config   An optional associative array of configuration settings.
 	 *
-	 * @since   __DEPLOYMENT_VERSION__
+	 * @since   1.0.0
 	 */
 	public function __construct(&$subject, $config)
 	{

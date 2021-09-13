@@ -142,6 +142,8 @@ class pkg_jshopping_unijax_filter_seoInstallerScript
 			return false;
 		}
 
+		$db = Factory::getDbo();
+
 		$query = $db->getQuery(true);
 
 		$query->select('COUNT(*)')
