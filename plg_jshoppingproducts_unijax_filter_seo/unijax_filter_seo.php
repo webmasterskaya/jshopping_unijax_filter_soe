@@ -371,6 +371,10 @@ class PlgJshoppingproductsUnijax_Filter_SEO extends CMSPlugin
 						$breadcrumbs_item_name = $breadcrumbs;
 					}
 				}
+				else
+				{
+					$doc->setMetadata('robots', 'noindex,nofollow');
+				}
 
 				// Добавляем в крошки
 				$pathway = $this->app->getPathway();
