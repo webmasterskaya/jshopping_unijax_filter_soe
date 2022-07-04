@@ -250,17 +250,17 @@ function printFiltersRow($key, $value, $collspan = 1)
 			foreach ($this->languages as $lang)
 			{
 				$i++;
-				$description      = "text_" . $lang->language;
-				$meta_title       = "title_" . $lang->language;
-				$meta_description = "description_" . $lang->language;
-				$breadcrumbs      = "breadcrumbs_" . $lang->language;
+				$description       = "text_" . $lang->language;
+				$meta_title        = "title_" . $lang->language;
+				$h1                = "name_" . $lang->language;
+				$meta_description  = "description_" . $lang->language;
+				$short_description = "short_description_" . $lang->language;
+				$breadcrumbs       = "breadcrumbs_" . $lang->language;
 				?>
 				<div id="<?php print $lang->language . '-page' ?>"
 					 class="tab-pane<?php if ($i == 1) { ?> active<?php } ?>">
 					<div class="col100">
 						<table class="admintable" style="max-width: 100%;">
-
-
 							<tr>
 								<td class="key">
 									<?php echo _JSHOP_META_TITLE; ?>
@@ -269,6 +269,16 @@ function printFiltersRow($key, $value, $collspan = 1)
 									<input type="text" class="inputbox w100"
 										   name="<?php print $meta_title ?>"
 										   value="<?php print $this->filter_seo->{$meta_title} ?>"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="key">
+									Заголовок страницы H1
+								</td>
+								<td>
+									<input type="text" class="inputbox w100"
+										   name="<?php print $h1 ?>"
+										   value="<?php print $this->filter_seo->{$h1} ?>"/>
 								</td>
 							</tr>
 							<tr>
@@ -293,7 +303,34 @@ function printFiltersRow($key, $value, $collspan = 1)
 							</tr>
 							<tr>
 								<td class="key">
-									<?php echo _JSHOP_DESCRIPTION; ?>
+									Дополнительное описание<br>
+									<em>
+										(Заменить "краткое описание категории")
+									</em>
+								</td>
+								<td>
+									<?php
+									$editor_conf
+										    = Factory::getConfig()
+										->get(
+											'editor'
+										);
+									$editor = Editor::getInstance($editor_conf);
+									print $editor->display(
+										$short_description,
+										$this->filter_seo->{$short_description},
+										'100%', '100', '75',
+										'20'
+									);
+									?>
+								</td>
+							</tr>
+							<tr>
+								<td class="key">
+									<?php echo _JSHOP_DESCRIPTION; ?><br>
+									<em>
+										(Заменить "описание категории")
+									</em>
 								</td>
 								<td>
 									<?php

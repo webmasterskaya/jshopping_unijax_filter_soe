@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="jlsitemap" method="upgrade">
+	<name>JLSitemap - SEO универсального AJAX фильтра JoomShopping</name>
+	<author>Artem Vasilev - Webmasterskaya</author>
+	<creationDate>01.07.2022</creationDate>
+	<copyright>Copyright (C) 2022 Webmasterskaya. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorEmail>dev@webmasterskaya.xyz</authorEmail>
+	<authorUrl>https://webmasterskaya.xyz</authorUrl>
+	<version>1.2.0</version>
+	<description>Добавление в карту сайта JLSitemap SEO ссылок для AJAX фильтра товаров JoomShopping от NEVIGEN</description>
+
+	<files>
+		<filename plugin="jshopping_unijax_filter_seo">jshopping_unijax_filter_seo.php</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+		</fields>
+	</config>
+</extension>

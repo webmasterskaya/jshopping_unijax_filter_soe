@@ -8,7 +8,7 @@
 	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
 	<authorEmail>dev@webmasterskaya.xyz</authorEmail>
 	<authorUrl>https://webmasterskaya.xyz</authorUrl>
-	<version>1.0.0</version>
+	<version>1.2.0</version>
 	<description>SEO для AJAX фильтра товаров JoomShopping от NEVIGEN</description>
 
 	<scriptfile>script.php</scriptfile>
@@ -17,6 +17,7 @@
 		<folder type="plugin" method="upgrade" group="jshoppingmenu" id="unijax_filter_seo">plg_jshoppingmenu_unijax_filter_seo</folder>
 		<folder type="plugin" method="upgrade" group="jshoppingproducts" id="unijax_filter_seo">plg_jshoppingproducts_unijax_filter_seo</folder>
 		<folder type="plugin" method="upgrade" group="system" id="unijax_filter_seo">plg_system_unijax_filter_seo</folder>
+		<folder type="plugin" method="upgrade" group="jlsitemap" id="jshopping_unijax_filter_soe">plg_jlsitemap_jshopping_unijax_filter_soe</folder>
 		<folder type="files" method="upgrade" id="unijax_filter_seo">com_jshopping_unijax_filter_seo</folder>
 	</files>
 </extension>
